@@ -1,0 +1,16 @@
+<div>
+    <select [(ngModel)]="selectedItem" [ngModelOptions]="{standalone: true}" (change)="selectionChange()">
+        <option *ngFor="let item of items" [ngValue]="item">{{item.itemName}}</option>
+    </select>
+    <span><button type="button" (click)="showRestaurants()">Search</button></span>
+    <div *ngFor="let item of chosenItems">
+        {{item.itemName}}, {{item.price}}
+    </div>
+</div>
+<div *ngFor="let restaurant of filteredRestaurants">
+    <div class="card">
+        <div>
+            {{restaurant.name}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div>
+    <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+        <div>
+            Ime: <input type="text" required formControlName="ime" (input)="checkIfValid()">
+        </div>
+        <div>
+            Prezime: <input type="text" required formControlName="prezime" (input)="checkIfValid()">
+        </div>
+        <div>
+            Email: <input type="email" formControlName="email" (input)="checkIfValid()">
+        </div>
+        <div>
+            <input type="submit" [disabled]="submitDisabled" value="submit">
+        </div>
+    </form>
+</div>

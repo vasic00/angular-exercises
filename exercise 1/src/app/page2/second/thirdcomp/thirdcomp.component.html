@@ -1,0 +1,20 @@
+<div>
+    <div>
+        Name: {{name}}
+    </div>
+    <div>
+        Lastname: {{lastname}}
+    </div>
+    <div>
+        Email: {{email}}
+    </div>
+    <input type="number" [(ngModel)]="leftNumber" (input)="calculate()">
+    <select [(ngModel)]="selectedOperator" [ngModelOptions]="{standalone: true}" (change)="calculate()">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" [(ngModel)]="rightNumber" (input)="calculate()">
+    <input type="number" readonly [value]="result">
+</div>

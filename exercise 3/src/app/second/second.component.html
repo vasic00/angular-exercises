@@ -1,0 +1,11 @@
+<div class="container">
+    <input type="number" [(ngModel)]="userId" (input)="fetch()">
+    <div *ngFor="let dataItem of data">
+        <div class="title" (click)="display($event)">
+            {{dataItem.title}}
+        </div>
+        <div [style.display]="'none'">
+            {{dataItem.body}}
+        </div>
+    </div>
+</div>

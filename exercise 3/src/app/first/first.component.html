@@ -1,0 +1,61 @@
+<div class="title">
+    INTERNET PROGRAMIRANJE
+</div>
+<div class="content-container">
+    <div class="left-content">
+        <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+            <div>
+                Ime: <input type="text" formControlName="ime" required (change)="checkIfValid()">
+            </div>
+            <div>
+                Prezime: <input type="text" formControlName="prezime" required (change)="checkIfValid()">
+            </div>
+            <div>
+                Broj indeksa: <input type="text" formControlName="brojIndeksa" required (change)="checkIfValid()">
+            </div>
+            <div>
+                Godina rodjenja: <input type="number" formControlName="godinaRodjenja" min="1950" required
+                    (input)="checkIfValid()">
+            </div>
+            <div>
+                Studijski program:
+                <select formControlName="studijskiProgram" (change)="checkIfValid()">
+                    <option value="RII">
+                        Racunarstvo i informatika
+                    </option>
+                    <option value="EIT">
+                        Elektronika i telekomunikacije
+                    </option>
+                </select>
+            </div>
+            <div>
+                <input type="submit" value="Submit" [disabled]="!enableSubmit">
+            </div>
+        </form>
+    </div>
+    <div class="right-content">
+        <div>
+            <a routerLink="second">Go to next page</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ime</th>
+                    <th>Prezime</th>
+                    <th>Broj indeksa</th>
+                    <th>Godina rodjenja</th>
+                    <th>Studijski program</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of students">
+                    <td>{{student.ime}}</td>
+                    <td>{{student.prezime}}</td>
+                    <td>{{student.brojIndeksa}}</td>
+                    <td>{{student.godinaRodjenja}}</td>
+                    <td>{{student.studijskiProgram}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

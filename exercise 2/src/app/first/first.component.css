@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.first-item {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}

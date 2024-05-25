@@ -1,0 +1,20 @@
+<div>
+    {{user.ime}}, {{user.prezime}}, {{user.email}}
+</div>
+<div class="container">
+    <div>
+        <input type="number" [(ngModel)]="firstNumber" (input)="calculate()">
+    </div>
+    <select [(ngModel)]="selectedOption" [ngModelOptions]="{standalone: true}" (change)="calculate()">
+        <option value="+" selected>+</option>
+        <option value="-">-</option>
+        <option value="x">x</option>
+        <option value="/">/</option>
+    </select>
+    <div>
+        <input type="number" [(ngModel)]="secondNumber" (input)="calculate()">
+    </div>
+    <div>
+        <input type="number" readonly [ngModel]="result">
+    </div>
+</div>

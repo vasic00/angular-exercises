@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="first-item">
+        <form id="formGroup" [formGroup]="formGroup" (ngSubmit)="submitMainForm()">
+            <div>
+                Name: <input type="text" formControlName="name" required="required">
+            </div>
+            <div>
+                Address: <input type="text" formControlName="address" required="required">
+            </div>
+        </form>
+        <form id="secondaryFormGroup" [formGroup]="secondaryFormGroup" (ngSubmit)="submitSecondaryForm()">
+            <div>
+                Item name: <input type="text" formControlName="itemName" required>
+            </div>
+            <div>
+                Description: <input type="text" formControlName="description" required>
+            </div>
+            <div>
+                Price: <input type="number" min="1" formControlName="price" required>
+            </div>
+            <div>
+                <input type="submit" value="Save item">
+            </div>
+        </form>
+        <div>
+            <div>
+                <ul>
+                    <li *ngFor="let item of items">{{item.itemName}}</li>
+                </ul>
+            </div>
+            <div>
+                <input type="submit" value="Save restaurant" form="formGroup">
+            </div>
+        </div>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Naziv</th>
+                    <th>Adresa</th>
+                    <th>Broj stavki menija</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let restaur of restr">
+                    <td>{{restaur.name}}</td>
+                    <td>{{restaur.address}}</td>
+                    <td>{{restaur.items.length}}</td>
+                    <td>
+                        <button type="button" (click)="deleteRestaur(restaur)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

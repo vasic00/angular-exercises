@@ -1,0 +1,28 @@
+<div>
+    <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+        <input type="text" formControlName="id" required>
+        <input type="submit" value="submit">
+    </form>
+    <div>
+        <a routerLink="">Return to first page</a>
+    </div>
+    <div>
+        <a routerLink="/second/third">Go to third page</a>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Body</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let element of elements">
+                    <td>{{element.title}}</td>
+                    <td>{{element.body}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
